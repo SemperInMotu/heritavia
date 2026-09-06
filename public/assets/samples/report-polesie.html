@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z12LCY13ES"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-Z12LCY13ES');
+    </script>
+
+<meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Пример отчёта — Полесье / Хоружко — Heritavia</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <style>
+    :root {
+      --ink: #0e1412;
+      --muted: #5c6a64;
+      --line: rgba(14, 20, 18, 0.14);
+      --mist: #f7f9f8;
+      --heritage: #2f6b5c;
+      --heritage-soft: #e2efe9;
+      --radius: 3px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font: 16px/1.55 "IBM Plex Sans", system-ui, sans-serif;
+      background: #f4f6f5;
+    }
+    .wrap { width: min(820px, calc(100% - 2rem)); margin: 0 auto; padding: 2rem 0 3.5rem; }
+    h1, h2, h3 { font-family: Georgia, "Fraunces", serif; }
+    h1 { font-size: 1.85rem; margin: 0.35rem 0 0.5rem; }
+    h2 { font-size: 1.35rem; margin: 1.75rem 0 0.75rem; scroll-margin-top: 1.5rem; }
+    h3 { font-size: 1.05rem; margin: 0 0 0.35rem; }
+    .eyebrow {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--heritage);
+    }
+    .meta { color: var(--muted); margin: 0 0 1.25rem; }
+    .fine { color: var(--muted); font-size: 0.85rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 0.55rem; margin: 0 0 1.5rem; }
+    .btn {
+      display: inline-block; border-radius: 999px; padding: 0.5rem 1rem;
+      font: 600 0.88rem system-ui, sans-serif; text-decoration: none; cursor: pointer;
+      border: 1px solid var(--heritage); background: var(--heritage); color: #fff;
+    }
+    .btn.secondary { background: transparent; color: var(--heritage); }
+    .card {
+      background: var(--mist); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 1rem 1.1rem; margin: 0 0 0.75rem;
+    }
+    .grid { display: grid; gap: 0.75rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    th, td { border-bottom: 1px solid var(--line); padding: 0.4rem 0.3rem; text-align: left; }
+    .source-row {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.55rem;
+      font-size: 0.88rem; padding: 0.5rem 0.6rem; margin: 0 0 0.45rem;
+      background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+    }
+    .source-row strong { flex: 1 1 10rem; }
+    .chip {
+      display: inline-block; font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      padding: 0.12rem 0.4rem; border-radius: 999px;
+    }
+    .chip.canon { background: var(--heritage-soft); color: var(--heritage); }
+    .chip.hyp { background: #f3ead8; color: #6b5428; }
+    .chip.dna { background: #d8e4ec; color: #1a3d52; }
+    .chip.inferred { background: #ececea; color: #5c6a64; }
+    @media print {
+      .actions { display: none; }
+      body { background: #fff; }
+      .card { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="actions">
+      <button class="btn" type="button" onclick="window.print()">Печать / PDF</button>
+      <a class="btn secondary" href="/ru/report.html">← Живой отчёт</a>
+      <a class="btn secondary" href="/assets/samples/report-polesie.en.html">EN</a>
+      <a class="btn secondary" href="/assets/samples/report-polesie.be.html">BE</a>
+      <a class="btn secondary" href="/ru/research.html">Пакеты</a>
+    </div>
+
+    <div class="eyebrow">Пример</div>
+    <h1>Пример отчёта — Полесье / Хоружко</h1>
+    <p class="meta">НИАБ · ЛВИА · myheritage.com · geni.com · 2026 · конфиденциально для семьи · обезличенный публичный разбор</p>
+    <p>
+      Живая семейная история: карта гнёзд, хронология границ, сюжеты рода и сводка ДНК.
+      В таблице ниже <em>*</em> означает выведенную дату — не архивный факт.
+    </p>
+
+    <h2 id="stories">Сюжеты</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Пинское Полесье</h3>
+        <p>Ядро отцовского рода и соседских фамилий сосредоточено вокруг Погост-Загородского — около трёх столетий на одном месте, плотная сеть крестьянских и мещанских связей Полесья.</p>
+      </article>
+      <article class="card">
+        <h3>В поисках свободных земель</h3>
+        <p>Продажа земли в д. Копейное Игуменского уезда, переезд в д. Лабы Минского уезда и покупка земель для всех сыновей большой семьи.</p>
+      </article>
+      <article class="card">
+        <h3>В поисках сбежавшей девицы из Литвы</h3>
+        <p>Речь о прапрабабушке Гражине. Архивных метрик по ней нет. Поиск идёт через ДНК её потомков: совпаденцы очерчивают географический треугольник в Литве. Идёт проверка всех приходов в округе.</p>
+      </article>
+      <article class="card">
+        <h3>В поисках лучшей жизни. Иммиграция в США</h3>
+        <p>Искал брата деда, уехавшего в США в начале XX в.: списки пассажиров, перепись, вариантность фамилии на латинице — связь восстановлена после 70 лет тишины.</p>
+      </article>
+      <article class="card">
+        <h3>Из плена в Швецию</h3>
+        <p>После плена во Вторую мировую след оборвался. Через шведские архивы и списки перемещённых нашёлся как переселенец в Швеции.</p>
+      </article>
+      <article class="card">
+        <h3>Из плена домой</h3>
+        <p>Андрей Григорьевич пропал без вести в Первую мировую войну; во Вторую мировую попал в плен, вернулся домой и завёл семью.</p>
+      </article>
+      <article class="card">
+        <h3>Угнанные и погибшие</h3>
+        <p>Поиск родных, угнанных в Германию во Вторую мировую, и тех, кто не вернулся: списки Остарбайтеров, лагерей и воинских потерь.</p>
+      </article>
+    </div>
+
+    <h2 id="nests">Гнёзда рода</h2>
+    <ul>
+      <li><strong>Пинский р-н / Погост-Загородская волость</strong> — Велютич, Гончар, Долмат, Кирикович, Колесникович, Курильчик, Кушнеревич, Мемех, Мухаровский, Наварич, Наривонович, Обод, Паштелян, Сорока, Суховерхий, Фурко, Хоружко, Яворские</li>
+      <li><strong>Пуховичский р-н / Игуменский уезд</strong> — Важник, Мазаник, Макавец, Прищепа, Скавыш, Стрельский, Шичко</li>
+      <li><strong>Логойский р-н / Беларучская волость</strong> — Бовтримович, Бутрым-Василевский, Вашкевич, Ивашкевич, Лейтан, Шестакович, Хверачов, Цевлюковский</li>
+      <li><strong>Воложинский р-н / Раковская волость</strong> — Богдан, Дубатовка, Корсак, Лойко</li>
+      <li><strong>Минск</strong> — Хоружко, Ковалевы</li>
+      <li><strong>Литва (гипотеза) · Свенцяны / Швенчёнис / Игналина</strong> — Вашкевич</li>
+      <li><strong>Быховский р-н / Быховский уезд</strong> — Ковалевы, Осиповские</li>
+      <li><strong>Могилёвский р-н / Могилёвский уезд</strong> — Гай, Гусаровы, Ковалевы, Медведевы, Саульченко, Ходаневич</li>
+      <li><strong>Шкловский р-н / Горецкий уезд</strong> — Латисовы</li>
+    </ul>
+
+    <h2 id="ancestors">Предки (фрагмент)</h2>
+    <table>
+      <thead><tr><th>Имя</th><th>Год</th><th>Место</th><th>Уверенность</th></tr></thead>
+      <tbody>
+        <tr><td>Якуб Макавец</td><td>1680</td><td>Дричин</td><td>вывод · РС 1795, Дричин</td></tr>
+        <tr><td>Кондрат Важник Дричин</td><td>1690</td><td>Дричин</td><td>вывод · Инвентарь Дукорской парафии, 1744</td></tr>
+        <tr><td>Дарья Важник</td><td>1695 *</td><td>Дричин</td><td>вывод · Инвентарь Дукорской парафии, 1744</td></tr>
+        <tr><td>Михей Юрьев Мазаник</td><td>1705</td><td>Дричин</td><td>вывод · Инвентарь Дукорской парафии, 1744</td></tr>
+        <tr><td>Ян Гончар</td><td>1715 *</td><td>Ботово</td><td>вывод · МК Ботово, 1799</td></tr>
+        <tr><td>Ян Ивашкевич</td><td>1715</td><td>Семково</td><td>вывод · МК, 1777</td></tr>
+      </tbody>
+    </table>
+    <p class="fine">факт = из родословной / архива · вывод = эвристика Heritavia · после «·» — самый ранний документ по предку или линии</p>
+
+    <h2 id="sources">Источники</h2>
+    <div class="source-row"><strong>Венчание 15 мая 1883, Погост-Загородский</strong><span class="chip canon">канон</span></div>
+    <div class="source-row"><strong>Год рождения Якуба Макавца ~1680</strong><span class="chip inferred">вывод</span></div>
+    <div class="source-row"><strong>Линия Вашкевич ↔ M* (мостик Гражины) ≈62,8 сМ</strong><span class="chip dna">ДНК</span><span class="chip hyp">гипотеза</span></div>
+    <div class="source-row"><strong>Гнездо у Швенчёниса / Игналины</strong><span class="chip hyp">гипотеза</span></div>
+    <ul>
+      <li>НИАБ</li>
+      <li>ЛВИА</li>
+      <li>myheritage.com</li>
+      <li>geni.com</li>
+    </ul>
+
+    <h2 id="dna">Сводка ДНК</h2>
+    <ul>
+      <li>персона 1 · кит «FT-7A2E91» · 30 групп</li>
+      <li>персона 2 · кит «MH-3C81B4» · 29 групп</li>
+      <li>персона 3 · кит «FT-9D04C2» · 36 групп</li>
+      <li>персона 4 · кит «FT-B16F58» · 42 группы</li>
+      <li>персона 5 · кит «MH-0E27A3» · 25 групп</li>
+    </ul>
+
+    <p class="fine" style="margin-top:2rem">
+      Heritavia · пример отчёта · обезличенный разбор в открытой демонстрации
+    </p>
+  </div>
+</body>
+</html>

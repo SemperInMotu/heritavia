@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://heritavia.vitalykhoruzhko.com/sitemap.xml
