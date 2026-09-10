@@ -2,8 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://heritavia.vitalykhoruzhko.com/</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/" />
-      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/ru/" />
+      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/en/" />
       <xhtml:link rel="alternate" hreflang="be" href="https://heritavia.vitalykhoruzhko.com/be/" />
       <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.vitalykhoruzhko.com/" />
     <changefreq>monthly</changefreq>
@@ -11,8 +11,8 @@
   </url>
   <url>
     <loc>https://heritavia.vitalykhoruzhko.com/research.html</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/research.html" />
-      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/ru/research.html" />
+      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/research.html" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/en/research.html" />
       <xhtml:link rel="alternate" hreflang="be" href="https://heritavia.vitalykhoruzhko.com/be/research.html" />
       <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.vitalykhoruzhko.com/research.html" />
     <changefreq>monthly</changefreq>
@@ -20,53 +20,125 @@
   </url>
   <url>
     <loc>https://heritavia.vitalykhoruzhko.com/report.html</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/report.html" />
-      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/ru/report.html" />
+      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/report.html" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/en/report.html" />
       <xhtml:link rel="alternate" hreflang="be" href="https://heritavia.vitalykhoruzhko.com/be/report.html" />
       <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.vitalykhoruzhko.com/report.html" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://heritavia.vitalykhoruzhko.com/about.html</loc>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/about.html" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/en/about.html" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://heritavia.vitalykhoruzhko.com/be/about.html" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.vitalykhoruzhko.com/about.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://heritavia.vitalykhoruzhko.com/blog.html</loc>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/blog.html" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/en/blog.html" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://heritavia.vitalykhoruzhko.com/be/blog.html" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.vitalykhoruzhko.com/blog.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://heritavia.vitalykhoruzhko.com/blog-metrics-missing.html</loc>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/blog-metrics-missing.html" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/en/blog-metrics-missing.html" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://heritavia.vitalykhoruzhko.com/be/blog-metrics-missing.html" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.vitalykhoruzhko.com/blog-metrics-missing.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://heritavia.vitalykhoruzhko.com/contacts.html</loc>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/contacts.html" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/en/contacts.html" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://heritavia.vitalykhoruzhko.com/be/contacts.html" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.vitalykhoruzhko.com/contacts.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://heritavia.vitalykhoruzhko.com/start.html</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/start.html" />
-      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/ru/start.html" />
+      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/start.html" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/en/start.html" />
       <xhtml:link rel="alternate" hreflang="be" href="https://heritavia.vitalykhoruzhko.com/be/start.html" />
       <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.vitalykhoruzhko.com/start.html" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://heritavia.vitalykhoruzhko.com/ru/</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/" />
-      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/ru/" />
+    <loc>https://heritavia.vitalykhoruzhko.com/en/</loc>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/en/" />
       <xhtml:link rel="alternate" hreflang="be" href="https://heritavia.vitalykhoruzhko.com/be/" />
       <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.vitalykhoruzhko.com/" />
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://heritavia.vitalykhoruzhko.com/ru/research.html</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/research.html" />
-      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/ru/research.html" />
+    <loc>https://heritavia.vitalykhoruzhko.com/en/research.html</loc>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/research.html" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/en/research.html" />
       <xhtml:link rel="alternate" hreflang="be" href="https://heritavia.vitalykhoruzhko.com/be/research.html" />
       <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.vitalykhoruzhko.com/research.html" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://heritavia.vitalykhoruzhko.com/ru/report.html</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/report.html" />
-      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/ru/report.html" />
+    <loc>https://heritavia.vitalykhoruzhko.com/en/report.html</loc>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/report.html" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/en/report.html" />
       <xhtml:link rel="alternate" hreflang="be" href="https://heritavia.vitalykhoruzhko.com/be/report.html" />
       <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.vitalykhoruzhko.com/report.html" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://heritavia.vitalykhoruzhko.com/ru/start.html</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/start.html" />
-      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/ru/start.html" />
+    <loc>https://heritavia.vitalykhoruzhko.com/en/about.html</loc>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/about.html" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/en/about.html" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://heritavia.vitalykhoruzhko.com/be/about.html" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.vitalykhoruzhko.com/about.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://heritavia.vitalykhoruzhko.com/en/blog.html</loc>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/blog.html" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/en/blog.html" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://heritavia.vitalykhoruzhko.com/be/blog.html" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.vitalykhoruzhko.com/blog.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://heritavia.vitalykhoruzhko.com/en/blog-metrics-missing.html</loc>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/blog-metrics-missing.html" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/en/blog-metrics-missing.html" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://heritavia.vitalykhoruzhko.com/be/blog-metrics-missing.html" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.vitalykhoruzhko.com/blog-metrics-missing.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://heritavia.vitalykhoruzhko.com/en/contacts.html</loc>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/contacts.html" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/en/contacts.html" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://heritavia.vitalykhoruzhko.com/be/contacts.html" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.vitalykhoruzhko.com/contacts.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://heritavia.vitalykhoruzhko.com/en/start.html</loc>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/start.html" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/en/start.html" />
       <xhtml:link rel="alternate" hreflang="be" href="https://heritavia.vitalykhoruzhko.com/be/start.html" />
       <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.vitalykhoruzhko.com/start.html" />
     <changefreq>monthly</changefreq>
@@ -74,8 +146,8 @@
   </url>
   <url>
     <loc>https://heritavia.vitalykhoruzhko.com/be/</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/" />
-      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/ru/" />
+      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/en/" />
       <xhtml:link rel="alternate" hreflang="be" href="https://heritavia.vitalykhoruzhko.com/be/" />
       <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.vitalykhoruzhko.com/" />
     <changefreq>monthly</changefreq>
@@ -83,8 +155,8 @@
   </url>
   <url>
     <loc>https://heritavia.vitalykhoruzhko.com/be/research.html</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/research.html" />
-      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/ru/research.html" />
+      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/research.html" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/en/research.html" />
       <xhtml:link rel="alternate" hreflang="be" href="https://heritavia.vitalykhoruzhko.com/be/research.html" />
       <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.vitalykhoruzhko.com/research.html" />
     <changefreq>monthly</changefreq>
@@ -92,17 +164,53 @@
   </url>
   <url>
     <loc>https://heritavia.vitalykhoruzhko.com/be/report.html</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/report.html" />
-      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/ru/report.html" />
+      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/report.html" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/en/report.html" />
       <xhtml:link rel="alternate" hreflang="be" href="https://heritavia.vitalykhoruzhko.com/be/report.html" />
       <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.vitalykhoruzhko.com/report.html" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://heritavia.vitalykhoruzhko.com/be/about.html</loc>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/about.html" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/en/about.html" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://heritavia.vitalykhoruzhko.com/be/about.html" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.vitalykhoruzhko.com/about.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://heritavia.vitalykhoruzhko.com/be/blog.html</loc>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/blog.html" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/en/blog.html" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://heritavia.vitalykhoruzhko.com/be/blog.html" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.vitalykhoruzhko.com/blog.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://heritavia.vitalykhoruzhko.com/be/blog-metrics-missing.html</loc>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/blog-metrics-missing.html" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/en/blog-metrics-missing.html" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://heritavia.vitalykhoruzhko.com/be/blog-metrics-missing.html" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.vitalykhoruzhko.com/blog-metrics-missing.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://heritavia.vitalykhoruzhko.com/be/contacts.html</loc>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/contacts.html" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/en/contacts.html" />
+      <xhtml:link rel="alternate" hreflang="be" href="https://heritavia.vitalykhoruzhko.com/be/contacts.html" />
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.vitalykhoruzhko.com/contacts.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://heritavia.vitalykhoruzhko.com/be/start.html</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/start.html" />
-      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/ru/start.html" />
+      <xhtml:link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/start.html" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/en/start.html" />
       <xhtml:link rel="alternate" hreflang="be" href="https://heritavia.vitalykhoruzhko.com/be/start.html" />
       <xhtml:link rel="alternate" hreflang="x-default" href="https://heritavia.vitalykhoruzhko.com/start.html" />
     <changefreq>monthly</changefreq>

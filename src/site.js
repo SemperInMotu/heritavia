@@ -4,6 +4,7 @@ const UI = {
     research: 'Packages',
     report: 'The report',
     about: 'About',
+    blog: 'Blog',
     contacts: 'Contacts',
     start: 'Start',
     tagline: 'Documentary family history from Eastern Europe — research and a living report.',
@@ -20,6 +21,7 @@ const UI = {
     research: 'Пакеты',
     report: 'Отчёт',
     about: 'О нас',
+    blog: 'Блог',
     contacts: 'Контакты',
     start: 'Начать',
     tagline: 'Документальная семейная история Восточной Европы — исследование и живой отчёт.',
@@ -36,6 +38,7 @@ const UI = {
     research: 'Пакеты',
     report: 'Справаздача',
     about: 'Пра нас',
+    blog: 'Блог',
     contacts: 'Кантакты',
     start: 'Пачаць',
     tagline: 'Дакумэнтальная сямейная гісторыя Ўсходняй Эўропы — досьлед і жывая справаздача.',
@@ -50,19 +53,22 @@ const UI = {
 };
 
 const LANG_KEY = 'heritavia-lang';
-const LANG_PATH = { en: '/', ru: '/ru/', be: '/be/' };
+/* Russian is the default locale at `/`. English lives under `/en/`. */
+const LANG_PATH = { ru: '/', en: '/en/', be: '/be/' };
 const HINT = {
-  ru: ['Сайт доступен на русском', 'Перейти'],
+  en: ['This site is also available in English', 'Switch'],
   be: ['Сайт даступны па-беларуску', 'Перайсьці'],
 };
 
 export function detectLang() {
-  const m = window.location.pathname.match(/^\/(en|ru|be)(?=\/|$)/);
-  return m ? m[1] : 'en';
+  const m = window.location.pathname.match(/^\/(en|be|ru)(?=\/|$)/);
+  if (!m) return 'ru';
+  return m[1] === 'ru' ? 'ru' : m[1];
 }
 
 function localePrefix(lang) {
-  return lang === 'en' ? '' : `/${lang}`;
+  if (lang === 'ru') return '';
+  return `/${lang}`;
 }
 
 function pathsFor(lang) {
@@ -72,6 +78,7 @@ function pathsFor(lang) {
     research: `${p}/research.html`,
     report: `${p}/report.html`,
     about: `${p}/about.html`,
+    blog: `${p}/blog.html`,
     contacts: `${p}/contacts.html`,
     start: `${p}/start.html`,
   };
@@ -100,7 +107,9 @@ function stripLocale(pathname) {
 
 function siblingLangUrl(targetLang) {
   const rest = stripLocale(window.location.pathname);
-  if (targetLang === 'en') return rest.endsWith('/') || rest.endsWith('.html') ? rest : `${rest}/`;
+  if (targetLang === 'ru') {
+    return rest.endsWith('/') || rest.endsWith('.html') ? rest : `${rest}/`;
+  }
   return `/${targetLang}${rest}`;
 }
 
@@ -114,8 +123,8 @@ function remember(lang) {
 
 function langSwitcher(lang) {
   const items = [
-    { code: 'en', label: 'EN' },
     { code: 'ru', label: 'RU' },
+    { code: 'en', label: 'EN' },
     { code: 'be', label: 'BE' },
   ];
   return `
@@ -142,7 +151,13 @@ function maybeRedirectByLocale() {
 
   const params = new URLSearchParams(window.location.search);
   const forced = params.get('lang');
-  if (forced && LANG_PATH[forced]) remember(forced);
+  if (forced && LANG_PATH[forced]) {
+    remember(forced);
+    if (forced !== 'ru') {
+      window.location.replace(LANG_PATH[forced] + window.location.hash);
+      return;
+    }
+  }
 
   let stored = null;
   try {
@@ -151,35 +166,30 @@ function maybeRedirectByLocale() {
     stored = null;
   }
 
+  if (stored && stored !== 'ru' && LANG_PATH[stored]) {
+    window.location.replace(LANG_PATH[stored] + window.location.hash);
+    return;
+  }
+
   const tags = (
     navigator.languages && navigator.languages.length
       ? navigator.languages
       : [navigator.language || '']
   ).map((tag) => tag.toLowerCase());
 
-  const byLanguage = tags.find((tag) => tag.startsWith('be') || tag.startsWith('ru'));
-  const byRegion = tags.find((tag) => /-(by|ru|kz)\b/.test(tag));
-  const detected = byLanguage ? (byLanguage.startsWith('be') ? 'be' : 'ru') : byRegion ? 'ru' : null;
-  if (!detected) return;
-
-  if (!stored) {
-    remember(detected);
-    window.location.replace(LANG_PATH[detected] + window.location.hash);
-    return;
-  }
-
-  if (stored !== 'en') return;
+  const prefersEn = tags.some((tag) => tag.startsWith('en')) && !tags.some((tag) => tag.startsWith('ru') || tag.startsWith('be'));
+  if (stored || !prefersEn) return;
 
   const hint = document.querySelector('[data-lang-hint]');
-  if (!hint || !HINT[detected]) return;
-  const [text, action] = HINT[detected];
+  if (!hint || !HINT.en) return;
+  const [text, action] = HINT.en;
   const textEl = hint.querySelector('[data-lang-hint-text]');
   const go = hint.querySelector('[data-lang-hint-go]');
   if (textEl) textEl.textContent = text;
   if (go) {
     go.textContent = action;
-    go.href = LANG_PATH[detected];
-    go.addEventListener('click', () => remember(detected));
+    go.href = LANG_PATH.en;
+    go.addEventListener('click', () => remember('en'));
   }
   hint.querySelector('[data-lang-hint-close]')?.addEventListener('click', () => {
     hint.hidden = true;
@@ -203,7 +213,7 @@ function wireFormStatus(t) {
 
 export function mountChrome({ current = '' } = {}) {
   const lang = detectLang();
-  const t = UI[lang] || UI.en;
+  const t = UI[lang] || UI.ru;
   const header = document.querySelector('[data-site-header]');
   const footer = document.querySelector('[data-site-footer]');
 
@@ -224,6 +234,7 @@ export function mountChrome({ current = '' } = {}) {
           ${page('research', t.research)}
           ${page('report', t.report)}
           ${page('about', t.about)}
+          ${page('blog', t.blog)}
           ${page('contacts', t.contacts)}
           <a class="nav-cta" href="${href('start', lang)}" ${current === 'start' ? 'aria-current="page"' : ''}>${t.start}</a>
         </nav>
@@ -253,6 +264,7 @@ export function mountChrome({ current = '' } = {}) {
               <li>${page('research', t.research)}</li>
               <li>${page('report', t.report)}</li>
               <li>${page('about', t.about)}</li>
+              <li>${page('blog', t.blog)}</li>
               <li>${page('contacts', t.contacts)}</li>
               <li>${page('start', t.start)}</li>
             </ul>
@@ -312,61 +324,48 @@ function nestIcon(L, name, hyp) {
     className: `nest-pin${hyp ? ' nest-pin--hyp' : ''}`,
     html: `<div class="nest-pin__inner"><i class="nest-pin__dot"></i><span class="nest-pin__label">${safe}</span></div>`,
     iconSize: [1, 1],
-    iconAnchor: [0, 4],
+    iconAnchor: [0, 0],
   });
 }
 
-export async function mountNestMaps() {
+function mountNestMaps() {
   const nodes = [...document.querySelectorAll('[data-nest-map]')];
   if (!nodes.length) return;
-  let L;
-  try {
-    L = await loadLeaflet();
-  } catch {
-    return;
-  }
 
-  nodes.forEach((el) => {
-    if (el.dataset.nestReady) return;
-    let nests = [];
-    try {
-      nests = JSON.parse(el.getAttribute('data-nests') || '[]');
-    } catch {
-      nests = [];
-    }
-    if (!nests.length) return;
+  loadLeaflet()
+    .then((L) => {
+      nodes.forEach((el) => {
+        if (el.dataset.mounted) return;
+        let nests = [];
+        try {
+          nests = JSON.parse(el.getAttribute('data-nests') || '[]');
+        } catch {
+          nests = [];
+        }
+        if (!nests.length) return;
 
-    const map = L.map(el, {
-      zoomControl: false,
-      attributionControl: true,
-      scrollWheelZoom: false,
-      dragging: !window.matchMedia('(pointer: coarse)').matches,
+        const map = L.map(el, {
+          zoomControl: false,
+          attributionControl: false,
+          scrollWheelZoom: false,
+          dragging: !L.Browser.mobile,
+        });
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          className: 'nest-tiles',
+          maxZoom: 18,
+        }).addTo(map);
+
+        const bounds = [];
+        nests.forEach((n) => {
+          const m = L.marker([n.lat, n.lng], { icon: nestIcon(L, n.name, n.hyp) }).addTo(map);
+          bounds.push(m.getLatLng());
+        });
+        if (bounds.length === 1) map.setView(bounds[0], 8);
+        else map.fitBounds(L.latLngBounds(bounds).pad(0.35));
+        el.dataset.mounted = '1';
+      });
+    })
+    .catch(() => {
+      /* map is optional enhancement */
     });
-
-    // Pale OSM basemap — CSS desaturates tiles so nest markers stay dominant
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-      maxZoom: 18,
-    }).addTo(map);
-
-    const bounds = [];
-    nests.forEach((n) => {
-      const marker = L.marker([n.lat, n.lng], {
-        icon: nestIcon(L, n.name, !!n.hyp),
-        keyboard: false,
-      }).addTo(map);
-      bounds.push(marker.getLatLng());
-    });
-
-    if (bounds.length) {
-      map.fitBounds(L.latLngBounds(bounds).pad(0.28), { maxZoom: 8 });
-    } else {
-      map.setView([53.7, 27.5], 6);
-    }
-
-    // Leaflet often needs a invalidate after layout / tiles
-    requestAnimationFrame(() => map.invalidateSize());
-    setTimeout(() => map.invalidateSize(), 250);
-    el.dataset.nestReady = '1';
-  });
 }
