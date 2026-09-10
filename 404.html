@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z12LCY13ES"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-Z12LCY13ES');
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>404 — Heritavia</title>
+    <meta name="description" content="Страница не найдена. Переход на карту сайта Heritavia." />
+    <link rel="stylesheet" href="/src/styles/main.css" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <script>
+      (function () {
+        var LANG_KEY = 'heritavia-lang';
+        var path = location.pathname || '';
+        var stored = null;
+        try {
+          stored = localStorage.getItem(LANG_KEY);
+        } catch (e) {}
+        var target = '/sitemap.html';
+        if (path.indexOf('/en/') === 0 || stored === 'en') target = '/en/sitemap.html';
+        else if (path.indexOf('/be/') === 0 || stored === 'be') target = '/be/sitemap.html';
+        window.__heritaviaSitemap = target;
+        setTimeout(function () {
+          location.replace(target);
+        }, 1200);
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="site-header" data-site-header></header>
+    <main>
+      <section class="page-hero heritage">
+        <div class="wrap" style="max-width:640px">
+          <div class="eyebrow heritage">404</div>
+          <h1 data-404-title>Страница не найдена</h1>
+          <p class="lead" data-404-lead>Такого адреса нет. Переходим на карту сайта…</p>
+          <p style="margin-top:1rem">
+            <a class="btn btn-heritage" data-404-link href="/sitemap.html">Открыть карту сайта</a>
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer" data-site-footer></footer>
+    <script type="module">
+      import { mountChrome, detectLang } from '/src/site.js';
+      const copy = {
+        en: {
+          title: 'Page not found',
+          lead: 'This address does not exist. Redirecting to the site map…',
+          go: 'Open site map',
+        },
+        ru: {
+          title: 'Страница не найдена',
+          lead: 'Такого адреса нет. Переходим на карту сайта…',
+          go: 'Открыть карту сайта',
+        },
+        be: {
+          title: 'Старонка не знойдзеная',
+          lead: 'Такой адрас не існуе. Пераходзім на мапу сайту…',
+          go: 'Адкрыць мапу сайту',
+        },
+      };
+      const lang = (() => {
+        const p = location.pathname || '';
+        if (p.startsWith('/en/')) return 'en';
+        if (p.startsWith('/be/')) return 'be';
+        try {
+          const s = localStorage.getItem('heritavia-lang');
+          if (s === 'en' || s === 'be') return s;
+        } catch {}
+        return detectLang();
+      })();
+      const t = copy[lang] || copy.ru;
+      const title = document.querySelector('[data-404-title]');
+      const lead = document.querySelector('[data-404-lead]');
+      const link = document.querySelector('[data-404-link]');
+      if (title) title.textContent = t.title;
+      if (lead) lead.textContent = t.lead;
+      if (link) {
+        link.textContent = t.go;
+        link.href = window.__heritaviaSitemap || '/sitemap.html';
+      }
+      mountChrome({ current: '' });
+    </script>
+  </body>
+</html>

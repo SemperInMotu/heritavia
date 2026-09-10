@@ -5,8 +5,12 @@ const UI = {
     report: 'The report',
     about: 'About',
     blog: 'Blog',
+    sitemap: 'Site map',
     contacts: 'Contacts',
     start: 'Start',
+    notFound: 'Page not found',
+    notFoundLead: 'This address does not exist. Redirecting to the site map…',
+    goSitemap: 'Open site map',
     tagline: 'Documentary family history from Eastern Europe — research and a living report.',
     navCol: 'Heritavia',
     contactCol: 'Contact',
@@ -22,8 +26,12 @@ const UI = {
     report: 'Отчёт',
     about: 'О нас',
     blog: 'Блог',
+    sitemap: 'Карта сайта',
     contacts: 'Контакты',
     start: 'Начать',
+    notFound: 'Страница не найдена',
+    notFoundLead: 'Такого адреса нет. Переходим на карту сайта…',
+    goSitemap: 'Открыть карту сайта',
     tagline: 'Документальная семейная история Восточной Европы — исследование и живой отчёт.',
     navCol: 'Heritavia',
     contactCol: 'Контакты',
@@ -39,8 +47,12 @@ const UI = {
     report: 'Справаздача',
     about: 'Пра нас',
     blog: 'Блог',
+    sitemap: 'Мапа сайту',
     contacts: 'Кантакты',
     start: 'Пачаць',
+    notFound: 'Старонка не знойдзеная',
+    notFoundLead: 'Такой адрас не існуе. Пераходзім на мапу сайту…',
+    goSitemap: 'Адкрыць мапу сайту',
     tagline: 'Дакумэнтальная сямейная гісторыя Ўсходняй Эўропы — досьлед і жывая справаздача.',
     navCol: 'Heritavia',
     contactCol: 'Кантакты',
@@ -79,6 +91,7 @@ function pathsFor(lang) {
     report: `${p}/report.html`,
     about: `${p}/about.html`,
     blog: `${p}/blog.html`,
+    sitemap: `${p}/sitemap.html`,
     contacts: `${p}/contacts.html`,
     start: `${p}/start.html`,
   };
@@ -266,6 +279,7 @@ export function mountChrome({ current = '' } = {}) {
               <li>${page('about', t.about)}</li>
               <li>${page('blog', t.blog)}</li>
               <li>${page('contacts', t.contacts)}</li>
+              <li>${page('sitemap', t.sitemap)}</li>
               <li>${page('start', t.start)}</li>
             </ul>
           </div>

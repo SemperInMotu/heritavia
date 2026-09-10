@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const HOST = 'https://heritavia.vitalykhoruzhko.com';
 
-const pages = ['', 'research.html', 'report.html', 'about.html', 'blog.html', 'blog-metrics-missing.html', 'contacts.html', 'start.html'];
+const pages = ['', 'research.html', 'report.html', 'about.html', 'blog.html', 'blog-metrics-missing.html', 'sitemap.html', 'contacts.html', 'start.html'];
 const locales = ['ru', 'en', 'be'];
 
 const url = (lang, page) => {

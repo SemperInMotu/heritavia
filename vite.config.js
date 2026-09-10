@@ -11,12 +11,14 @@ const basePages = [
   'about.html',
   'blog.html',
   'blog-metrics-missing.html',
+  'sitemap.html',
   'contacts.html',
   'start.html',
 ];
 
 const pages = [
   ...basePages,
+  '404.html',
   ...['en', 'be', 'ru'].flatMap((lang) => basePages.map((page) => `${lang}/${page}`)),
 ];
 
