@@ -11,6 +11,7 @@ const basePages = [
   'about.html',
   'blog.html',
   'blog-metrics-missing.html',
+  'forma-1-pasport-sssr-genealogy.html',
   'sitemap.html',
   'contacts.html',
   'start.html',
