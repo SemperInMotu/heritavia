@@ -306,6 +306,7 @@ export function mountChrome({ current = '' } = {}) {
   maybeRedirectByLocale();
   wireFormStatus(t);
   mountNestMaps();
+  mountMigrationMaps();
 }
 
 function loadLeaflet() {
@@ -376,6 +377,86 @@ function mountNestMaps() {
         });
         if (bounds.length === 1) map.setView(bounds[0], 8);
         else map.fitBounds(L.latLngBounds(bounds).pad(0.35));
+        el.dataset.mounted = '1';
+      });
+    })
+    .catch(() => {
+      /* map is optional enhancement */
+    });
+}
+
+function migrationIcon(L, year, name) {
+  const safeYear = String(year ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+  const safeName = String(name ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+  return L.divIcon({
+    className: 'nest-pin nest-pin--path',
+    html: `<div class="nest-pin__inner"><i class="nest-pin__dot"></i><span class="nest-pin__label"><b>${safeYear}</b> ${safeName}</span></div>`,
+    iconSize: [1, 1],
+    iconAnchor: [0, 0],
+  });
+}
+
+function mountMigrationMaps() {
+  const nodes = [...document.querySelectorAll('[data-migration-map]')];
+  if (!nodes.length) return;
+
+  loadLeaflet()
+    .then((L) => {
+      nodes.forEach((el) => {
+        if (el.dataset.mounted) return;
+        let stops = [];
+        try {
+          stops = JSON.parse(el.getAttribute('data-stops') || '[]');
+        } catch {
+          stops = [];
+        }
+        if (stops.length < 2) return;
+
+        const map = L.map(el, {
+          zoomControl: true,
+          attributionControl: false,
+          scrollWheelZoom: false,
+          dragging: true,
+        });
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          className: 'nest-tiles',
+          maxZoom: 18,
+        }).addTo(map);
+        map.zoomControl.setPosition('topright');
+
+        const latlngs = stops.map((s) => [s.lat, s.lng]);
+        L.polyline(latlngs, {
+          color: '#6f5643',
+          weight: 3,
+          opacity: 0.9,
+          dashArray: '7 9',
+          lineJoin: 'round',
+        }).addTo(map);
+
+        const bounds = [];
+        stops.forEach((s) => {
+          const m = L.marker([s.lat, s.lng], {
+            icon: migrationIcon(L, s.year, s.name),
+          }).addTo(map);
+          bounds.push(m.getLatLng());
+        });
+        map.fitBounds(L.latLngBounds(bounds).pad(0.28));
+        const syncSize = () => {
+          map.invalidateSize();
+          map.fitBounds(L.latLngBounds(bounds).pad(0.28));
+        };
+        requestAnimationFrame(syncSize);
+        setTimeout(syncSize, 120);
+        if (typeof ResizeObserver !== 'undefined') {
+          const ro = new ResizeObserver(() => map.invalidateSize());
+          ro.observe(el);
+        }
         el.dataset.mounted = '1';
       });
     })

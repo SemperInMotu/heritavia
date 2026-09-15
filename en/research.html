@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en"><head>
+<html lang="en">
+  <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z12LCY13ES"></script>
     <script>
@@ -9,32 +10,415 @@
 
       gtag('config', 'G-Z12LCY13ES');
     </script>
-
-<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Research packages — Heritavia</title><meta name="description" content="Public price list: €300 strategy, one family line from €1500, full family history from €5500 — with what is and is not included." />
-  <link rel="canonical" href="https://heritavia.vitalykhoruzhko.com/en/research.html" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Research packages — Heritavia</title>
+    <meta
+      name="description"
+      content="Public price list: strategy from €300, one family line from €1500, full family history from €5500 — with inclusions, exclusions, FAQ and how to start."
+    />
+    <link rel="canonical" href="https://heritavia.vitalykhoruzhko.com/en/research.html" />
     <link rel="alternate" hreflang="ru" href="https://heritavia.vitalykhoruzhko.com/research.html" />
     <link rel="alternate" hreflang="en" href="https://heritavia.vitalykhoruzhko.com/en/research.html" />
     <link rel="alternate" hreflang="be" href="https://heritavia.vitalykhoruzhko.com/be/research.html" />
     <link rel="alternate" hreflang="x-default" href="https://heritavia.vitalykhoruzhko.com/research.html" />
-<link rel="stylesheet" href="/src/styles/main.css" />
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
-  <meta name="robots" content="index,follow" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Research packages — Heritavia" />
-  <meta property="og:description" content="Public price list: €300 strategy, one family line from €1500, full family history from €5500 — with what is and is not included." />
-  <meta property="og:url" content="https://heritavia.vitalykhoruzhko.com/en/research.html" />
-  <meta property="og:image" content="https://heritavia.vitalykhoruzhko.com/assets/og-default.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Research packages — Heritavia" />
-  <meta name="twitter:description" content="Public price list: €300 strategy, one family line from €1500, full family history from €5500 — with what is and is not included." />
-  <meta name="twitter:image" content="https://heritavia.vitalykhoruzhko.com/assets/og-default.jpg" />
-</head><body><header class="site-header" data-site-header></header><main>
-  <section class="page-hero heritage"><div class="wrap"><div class="eyebrow heritage">Heritavia Research</div><h1>Research packages</h1><p class="lead">A public price list that makes clear what is included and excluded. No surprises at handover.</p></div></section>
-  <section class="section"><div class="wrap" style="display:grid;gap:1rem">
-    <div class="panel"><h3>Research strategy — €300</h3><div class="grid-2" style="margin-top:0.75rem"><div><strong>Included</strong><ul class="list-clean"><li>Archive holdings review</li><li>Analytical report</li><li>Research plan and budget</li></ul></div><div><strong>Not included</strong><ul class="list-clean"><li>Deep archive research</li><li>Living Heritavia report</li></ul></div></div></div>
-    <div class="panel featured"><h3>One family line — from €1500</h3><div class="grid-2" style="margin-top:0.75rem"><div><strong>Included</strong><ul class="list-clean"><li>~100 years of archive research</li><li>Scans / extracts of key records</li><li>Living Heritavia report</li><li>Research log</li></ul></div><div><strong>Not included</strong><ul class="list-clean"><li>All collateral branches without agreement</li><li>Printed book</li><li>Laboratory DNA test</li></ul></div></div><p class="fine">Payment 50/50.</p></div>
-    <div class="panel"><h3>Family history — from €5500</h3><div class="grid-2" style="margin-top:0.75rem"><div><strong>Included</strong><ul class="list-clean"><li>Up to 4 agreed lines</li><li>Family chronicle</li><li>“At the table” presentation</li><li>Living Heritavia report</li></ul></div><div><strong>Not included</strong><ul class="list-clean"><li>VIP book / print run without a separate estimate</li><li>On-site expeditions</li></ul></div></div><p class="fine">Payment 40/30/30.</p></div>
-    <p class="fine">First cohort: −20% for two projects ↔ detailed feedback + an anonymised case study.</p><div style="display:flex;flex-wrap:wrap;gap:0.7rem"><a class="btn btn-heritage" href="/en/start.html">Start</a></div>
-  </div></section>
-</main><footer class="site-footer" data-site-footer></footer><script type="module">import { mountChrome } from '/src/site.js'; mountChrome({ current: 'research' });</script></body></html>
+    <link rel="stylesheet" href="/src/styles/main.css" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Research packages — Heritavia" />
+    <meta
+      property="og:description"
+      content="Public price list: strategy from €300, one family line from €1500, full family history from €5500."
+    />
+    <meta property="og:url" content="https://heritavia.vitalykhoruzhko.com/en/research.html" />
+    <meta property="og:image" content="https://heritavia.vitalykhoruzhko.com/assets/og-default.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Research packages — Heritavia" />
+    <meta
+      name="twitter:description"
+      content="Public price list: strategy from €300, one family line from €1500, full family history from €5500."
+    />
+    <meta name="twitter:image" content="https://heritavia.vitalykhoruzhko.com/assets/og-default.jpg" />
+  </head>
+  <body class="research-page">
+    <header class="site-header" data-site-header></header>
+    <main>
+      <section class="page-hero heritage">
+        <div class="wrap">
+          <div class="eyebrow heritage">Heritavia Research</div>
+          <h1>From one question to a full family history</h1>
+          <p class="lead">
+            A public price list with clear inclusions and exclusions. Start small and continue when new
+            documents and hypotheses appear.
+          </p>
+          <div style="display:flex;flex-wrap:wrap;gap:0.7rem;margin-top:1rem">
+            <a class="btn btn-heritage" href="/en/start.html">Discuss my family history</a>
+            <a class="btn btn-line" href="#packages">See formats</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-band">
+        <div class="wrap">
+          <div class="eyebrow heritage">Where the search begins</div>
+          <h2>Sometimes the problem is not that the ancestor is missing.</h2>
+          <p class="section-lead">
+            The problem is that the record is not where you expect to find it.
+          </p>
+          <div class="pain-grid">
+            <div class="pain-card">Parish registers did not survive.</div>
+            <div class="pain-card">The surname changes from document to document.</div>
+            <div class="pain-card">Only a name, a village and an approximate year of birth are known.</div>
+            <div class="pain-card">The ancestor was “probably from Lithuania or Belarus,” but there is no proof.</div>
+            <div class="pain-card">Someone already searched the archive and found nothing.</div>
+            <div class="pain-card">FamilySearch and other databases return too few answers.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-band">
+        <div class="wrap">
+          <div class="eyebrow heritage">How we search</div>
+          <h2>One document rarely tells the whole story.</h2>
+          <p class="section-lead">
+            So we do not stop at one database or one parish entry. We gather evidence from multiple sources.
+          </p>
+          <div class="method-grid">
+            <div class="method-item">
+              <span class="method-num">01</span>
+              <h3>Archives</h3>
+              <p>Parish books, revision lists, censuses, court, land and military files.</p>
+            </div>
+            <div class="method-item">
+              <span class="method-num">02</span>
+              <h3>Documents</h3>
+              <p>Records of relatives, marriages, children, places of residence and family moves.</p>
+            </div>
+            <div class="method-item">
+              <span class="method-num">03</span>
+              <h3>Maps</h3>
+              <p>Old maps and shifting administrative borders help explain the geography of a family.</p>
+            </div>
+            <div class="method-item">
+              <span class="method-num">04</span>
+              <h3>DNA &amp; data</h3>
+              <p>Genetic matches, databases, relationship analysis and cross-checking large datasets.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-band">
+        <div class="wrap">
+          <div class="eyebrow heritage">What you get</div>
+          <h2>Not just a list of names found.</h2>
+          <p class="section-lead">
+            Our job is to turn scattered documents into a clear family story you can keep researching.
+          </p>
+          <div class="deliver-grid">
+            <div class="deliver-card">
+              <h3>Research deliverables</h3>
+              <ul>
+                <li>archival documents and extracts;</li>
+                <li>documented relationships;</li>
+                <li>geography of family residence;</li>
+                <li>event chronology;</li>
+                <li>research log;</li>
+                <li>hypotheses and next search directions;</li>
+                <li>Living Report Heritavia.</li>
+              </ul>
+            </div>
+            <div class="deliver-card">
+              <h3>And most importantly</h3>
+              <p>
+                You understand not only <em>who</em> your ancestor was, but where they lived, what the family
+                did, how it moved, and which events shaped its history.
+              </p>
+              <p>Sometimes a single document changes the whole picture of a family line.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-band">
+        <div class="wrap">
+          <div class="geo-block">
+            <div class="eyebrow heritage">Belarus &amp; Eastern Europe</div>
+            <h2>Were your ancestors from Belarus?</h2>
+            <p>
+              We specialise in genealogical research for Belarus and neighbouring historical territories —
+              Lithuania, Poland, Ukraine and Latvia.
+            </p>
+            <p>
+              Cases where borders, administrative affiliation and place names changed more than once are
+              especially relevant.
+            </p>
+            <p>That is why a modern search by today’s village name sometimes leads to the wrong place entirely.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-band">
+        <div class="wrap">
+          <div class="eyebrow heritage">What the result looks like</div>
+          <h2>Research becomes a living history.</h2>
+          <p class="section-lead">
+            Not a dry table of names — documents, maps, relationships, events and family story.
+          </p>
+          <div class="result-grid">
+            <figure class="result-card result-card--media">
+              <img
+                src="/assets/samples/metric-1864-khoruzhko.jpg"
+                alt="Open spread of an 1864 parish register with a birth entry"
+                width="1200"
+                height="800"
+                loading="lazy"
+              />
+              <figcaption>Archival document with record analysis</figcaption>
+            </figure>
+
+            <div class="result-card result-card--map">
+              <div
+                class="nest-map"
+                data-migration-map
+                role="img"
+                aria-label="Vazhnik family moves: Drichin, Kopeyno, Laby, Minsk"
+                data-stops='[{"year":"pre-1810","name":"Drichin","lat":53.5701,"lng":27.976},{"year":"1810","name":"Kopeyno","lat":53.5792,"lng":27.9199},{"year":"1914","name":"Laby","lat":54.048,"lng":27.038},{"year":"~1952","name":"Minsk","lat":53.9,"lng":27.56}]'
+              ></div>
+              <span class="result-card__cap">Map of family movements</span>
+            </div>
+
+            <div class="result-card result-card--report">
+              <div class="living-mini">
+                <div class="living-mini__head">
+                  <span class="eyebrow heritage">Living Report</span>
+                  <strong>Vazhnik · line and stories</strong>
+                </div>
+                <div class="horizon-bars">
+                  <div class="horizon-row">
+                    <span>Vazhnik</span>
+                    <div class="bar"><i style="width:98%"></i></div>
+                    <span class="yr">~1690</span>
+                  </div>
+                  <div class="horizon-row">
+                    <span>Khoruzhko</span>
+                    <div class="bar"><i style="width:92%"></i></div>
+                    <span class="yr">~1740</span>
+                  </div>
+                </div>
+                <ul class="chrono-mini">
+                  <li>
+                    <span class="yr">1810</span>
+                    <span class="lbl">Drichin → Kopeyno (Pukhovichi)</span>
+                    <span class="tag">family</span>
+                  </li>
+                  <li>
+                    <span class="yr">1914</span>
+                    <span class="lbl">Kopeyno → Laby (Volozhin)</span>
+                    <span class="tag">family</span>
+                  </li>
+                  <li>
+                    <span class="yr">early 1950s</span>
+                    <span class="lbl">Laby → Minsk</span>
+                    <span class="tag">family</span>
+                  </li>
+                </ul>
+                <article class="living-mini__story">
+                  <h4>In search of free land</h4>
+                  <p>
+                    Sale of land in Kopeynoye, Igumen uyezd; move to Laby, Minsk uyezd; purchase of a
+                    holding for all sons of a large family.
+                  </p>
+                </article>
+              </div>
+              <span class="result-card__cap">Fragment of Living Report Heritavia</span>
+            </div>
+          </div>
+          <p class="muted" style="margin-top:0.85rem;max-width:42rem;font-size:0.92rem">
+            Left — 1864 parish entry (Khoruzhko / Oles). Centre — Vazhnik path: Drichin → Kopeyno (1810) →
+            Laby (1914) → Minsk (early 1950s). Right — report fragment: horizon, timeline, story.
+          </p>
+          <p class="fine" style="margin-top:1rem">
+            <a href="/assets/samples/report-polesie.en.html">Open a sample report</a>
+            ·
+            <a href="/en/report.html">About the report</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="section-band" id="packages">
+        <div class="wrap">
+          <div class="eyebrow heritage">Research formats</div>
+          <h2>From one question to a full family history.</h2>
+          <p class="section-lead">
+            Start with a small task and continue when new documents and hypotheses appear.
+          </p>
+
+          <div class="package-grid">
+            <article class="package-card">
+              <p class="eyebrow heritage">First step</p>
+              <h3>Find where to look</h3>
+              <p class="package-price">from €300</p>
+              <p class="muted">
+                When you do not yet know which archive, fond or document type to search for your ancestor.
+              </p>
+              <div class="package-lists">
+                <div>
+                  <strong>Included</strong>
+                  <ul>
+                    <li>archive holdings review;</li>
+                    <li>analytical report;</li>
+                    <li>research plan;</li>
+                    <li>preliminary budget for further work.</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>Not included</strong>
+                  <ul>
+                    <li>deep archive research;</li>
+                    <li>full Living Report.</li>
+                  </ul>
+                </div>
+              </div>
+              <a class="btn btn-heritage" href="/en/start.html">Start</a>
+            </article>
+
+            <article class="package-card featured">
+              <p class="eyebrow heritage">Core research</p>
+              <h3>Investigate one family line</h3>
+              <p class="package-price">from €1&nbsp;500</p>
+              <p class="muted">
+                Deep research on one line — about 100 years and further as sources allow.
+              </p>
+              <div class="package-lists">
+                <div>
+                  <strong>Included</strong>
+                  <ul>
+                    <li>archive research;</li>
+                    <li>scans and extracts of key records;</li>
+                    <li>document analysis;</li>
+                    <li>Living Report Heritavia;</li>
+                    <li>research log.</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>Not included</strong>
+                  <ul>
+                    <li>all collateral branches without agreement;</li>
+                    <li>printed family book;</li>
+                    <li>laboratory DNA test.</li>
+                  </ul>
+                </div>
+              </div>
+              <a class="btn btn-heritage" href="/en/start.html">Discuss research</a>
+              <p class="fine">Payment 50/50. Archive fees billed separately.</p>
+            </article>
+
+            <article class="package-card">
+              <p class="eyebrow heritage">Larger story</p>
+              <h3>Rebuild a family history</h3>
+              <p class="package-price">from €5&nbsp;500</p>
+              <p class="muted">
+                Comprehensive research across several branches with a family chronicle.
+              </p>
+              <div class="package-lists">
+                <div>
+                  <strong>Included</strong>
+                  <ul>
+                    <li>up to 4 agreed branches;</li>
+                    <li>family chronicle;</li>
+                    <li>Living Report Heritavia;</li>
+                    <li>family history presentation.</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong>Not included</strong>
+                  <ul>
+                    <li>VIP book and print run without a separate estimate;</li>
+                    <li>on-site expeditions.</li>
+                  </ul>
+                </div>
+              </div>
+              <a class="btn btn-heritage" href="/en/start.html">Discuss the project</a>
+              <p class="fine">Payment 40/30/30. Archive fees billed separately.</p>
+            </article>
+          </div>
+
+          <div class="deliver-card" style="margin-top:1.25rem">
+            <h3>Why prices say “from”?</h3>
+            <p>
+              Genealogy cannot be priced only by how many people sit in a tree. Region, period, record
+              survival, number of archives, search difficulty and branch count all matter. After we see your
+              starting facts we propose a concrete plan and budget. We guarantee method and sources — not “N
+              generations at any cost.”
+            </p>
+          </div>
+          <p class="fine" style="margin-top:0.9rem">
+            First cohort: −20% for two projects ↔ detailed feedback + an anonymised case study.
+          </p>
+        </div>
+      </section>
+
+      <section class="section-band">
+        <div class="wrap" style="max-width:720px;margin-inline:auto;width:min(720px,calc(100% - 2.5rem))">
+          <div class="eyebrow heritage">FAQ</div>
+          <h2>Before you start</h2>
+          <div class="faq" style="margin-top:1rem">
+            <details>
+              <summary>What if parish registers did not survive?</summary>
+              <p>
+                That is not the end. We use indirect sources: revision lists, censuses, court and land files,
+                relatives’ papers, military and other fonds. See also
+                <a href="/en/blog-metrics-missing.html">the article on missing parish books</a>.
+              </p>
+            </details>
+            <details>
+              <summary>Do I need an exact birth date?</summary>
+              <p>
+                No. A name, approximate year, place and a few known relatives are often enough.
+              </p>
+            </details>
+            <details>
+              <summary>What if the surname is spelled differently?</summary>
+              <p>
+                Common in historical records. We account for spelling variants, document language, parish
+                practice and period.
+              </p>
+            </details>
+            <details>
+              <summary>Can I start with one surname?</summary>
+              <p>
+                Yes — that is what the one-line package is for. Collateral branches can be added later by
+                agreement.
+              </p>
+            </details>
+            <details>
+              <summary>Can I order research if I live abroad?</summary>
+              <p>
+                Yes. Most work is remote; deliverables are digital (report, documents, research log).
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-dark">
+        <div class="wrap">
+          <div class="eyebrow">Start research</div>
+          <h2>Tell us who you are looking for.</h2>
+          <p>
+            You do not need to know the archive, fond or exact surname spelling in advance. Send everything
+            known, and we will help define the next step.
+          </p>
+          <a class="btn btn-light" href="/en/start.html">Discuss my family history</a>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer" data-site-footer></footer>
+    <script type="module">
+      import { mountChrome } from '/src/site.js';
+      mountChrome({ current: 'research' });
+    </script>
+  </body>
+</html>
