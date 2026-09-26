@@ -1,5 +1,5 @@
 import { UI } from '../../lib/i18n';
-import { GtagScripts } from '../../components/GtagScripts';
+import { GtagScripts, YandexNoscript } from '../../components/GtagScripts';
 import '../../src/styles/main.css';
 
 export const metadata = {
@@ -13,7 +13,10 @@ export default function RuRootLayout({ children }) {
       <head>
         <GtagScripts />
       </head>
-      <body>{children}</body>
+      <body>
+        <YandexNoscript />
+        {children}
+      </body>
     </html>
   );
 }

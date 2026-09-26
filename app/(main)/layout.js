@@ -1,6 +1,6 @@
 import { UI } from '../../lib/i18n';
 import { rootLocale } from '../../lib/site-mode';
-import { GtagScripts } from '../../components/GtagScripts';
+import { GtagScripts, YandexNoscript } from '../../components/GtagScripts';
 import '../../src/styles/main.css';
 
 export const metadata = {
@@ -14,7 +14,10 @@ export default function MainLayout({ children }) {
       <head>
         <GtagScripts />
       </head>
-      <body>{children}</body>
+      <body>
+        <YandexNoscript />
+        {children}
+      </body>
     </html>
   );
 }
