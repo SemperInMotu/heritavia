@@ -5,9 +5,9 @@ import { absoluteUrl, pathFor, NAV_IDS } from '../lib/page-map';
 import { UI } from '../lib/i18n';
 
 const LANG_LABELS = {
-  en: 'English',
-  ru: 'Русский',
-  be: 'Беларуская',
+  en: { short: 'EN', label: 'English' },
+  ru: { short: 'RU', label: 'Русский' },
+  be: { short: 'BE', label: 'Беларуская' },
 };
 
 function langOrder(locale) {
@@ -30,7 +30,8 @@ function hrefs(locale, pageId) {
     start: local('start'),
     langs: langOrder(locale).map((code) => ({
       code,
-      label: LANG_LABELS[code],
+      short: LANG_LABELS[code].short,
+      label: LANG_LABELS[code].label,
       href: other(pageId || 'home', code),
     })),
   };
@@ -55,7 +56,15 @@ export function SiteShell({ locale, current, pageId = 'home', html }) {
   return (
     <>
       <LangSync locale={locale} />
-      <Header t={t} links={nav} startHref={links.start} current={current} home={links.home} />
+      <Header
+        t={t}
+        links={nav}
+        startHref={links.start}
+        current={current}
+        home={links.home}
+        langs={links.langs}
+        locale={locale}
+      />
       <main dangerouslySetInnerHTML={{ __html: html }} />
       <footer className="site-footer">
         <div className="wrap">
@@ -118,19 +127,6 @@ export function SiteShell({ locale, current, pageId = 'home', html }) {
             </div>
           </div>
           <div className="footer-bottom">
-            <nav className="lang-switch" aria-label="Language">
-              {links.langs.map((item) =>
-                item.code === locale ? (
-                  <span key={item.code} className="lang-current" aria-current="page">
-                    {item.label}
-                  </span>
-                ) : (
-                  <a key={item.code} href={item.href} hrefLang={item.code}>
-                    {item.label}
-                  </a>
-                ),
-              )}
-            </nav>
             <span>© {new Date().getFullYear()} Heritavia</span>
             <span>{t.unp}</span>
           </div>

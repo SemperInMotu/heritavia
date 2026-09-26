@@ -6,7 +6,7 @@ Two language front doors, one business. **Next.js static export only** (Vite rem
 
 | Host | Build | Root locale | Other |
 |------|-------|-------------|-------|
-| [heritavia.com](https://heritavia.com) | `npm run build:com` (`SITE=com`) | English at `/` | no `/en/` content (legacy redirects in `public/`) |
+| [heritavia.com](https://heritavia.com) | `npm run build:com` (`SITE=com`) | English at `/` | no local RU/BE; legacy `/ru/*` `/be/*` redirect to родословная.бел |
 | [родословная.бел](https://xn--80adf2alcbbnn3n.xn--90ais) | `npm run build` (`SITE=bel`) | Беларуская at `/` | Русский at `/ru/` |
 
 `x-default` and English canonicals → heritavia.com.  
@@ -41,4 +41,4 @@ Empty hubs (`/services/`, `/dna/`, `/family-tree/`, `/places/`, country research
 
 ## Language switcher
 
-Footer: `English | Русский | Беларуская` (current language first). Links go to the **sibling page** on the other host/locale via page-map, not only to home.
+Header (sticky): `EN | RU | BE` — sibling page on the other host/locale via page-map.
