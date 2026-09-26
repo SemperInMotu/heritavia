@@ -1,7 +1,9 @@
 /**
  * Write legacy *.html redirect stubs into public/ for old bookmarks.
+ * SITE=com → EN only (no /ru /be on heritavia.com)
+ * SITE=bel → BE root + /ru/ stubs for родословная.бел
  */
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync, rmSync, existsSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { LEGACY_TO_ID, pathFor, absoluteUrl } from '../lib/page-map.js';
@@ -34,14 +36,21 @@ function write(rel, html) {
   writeFileSync(dest, html, 'utf8');
 }
 
+function wipe(rel) {
+  const dest = resolve(pub, rel);
+  if (existsSync(dest)) rmSync(dest, { recursive: true, force: true });
+}
+
 if (isCom) {
+  wipe('ru');
+  wipe('be');
   for (const [legacy, id] of Object.entries(LEGACY_TO_ID)) {
     const target = pathFor(id, 'en');
     write(legacy, stub(target, absoluteUrl(id, 'en'), 'en'));
     write(`en/${legacy}`, stub(target, absoluteUrl(id, 'en'), 'en'));
   }
   write('en/index.html', stub('/', absoluteUrl('home', 'en'), 'en'));
-  console.log('legacy redirects → public/ (EN / .com)');
+  console.log('legacy redirects → public/ (EN only / .com; wiped public/ru + public/be)');
 } else {
   for (const [legacy, id] of Object.entries(LEGACY_TO_ID)) {
     write(legacy, stub(pathFor(id, 'be'), absoluteUrl(id, 'be'), 'be'));
