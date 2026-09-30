@@ -49,13 +49,13 @@
 
       <section class="section">
         <div class="wrap" style="max-width:640px">
-          <form class="panel lead-form" action="https://formsubmit.co/info@heritavia.com" method="POST">
+          <form class="panel lead-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="bfb3a2dd-b595-4f9b-9773-a076f735d73d" />
+            <input type="hidden" name="from_name" value="Heritavia" />
             <input type="hidden" name="topic" value="heritage-strategy" />
-            <input type="hidden" name="_subject" value="Heritavia — заявка на стратегию поиска" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="https://heritavia.com/contact/start/?sent=1" />
-            <input type="text" name="_honey" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;opacity:0" />
+            <input type="hidden" name="subject" value="Heritavia — заявка на стратегию поиска" />
+            <input type="hidden" name="redirect" value="https://xn--80adf2alcbbnn3n.xn--90ais/ru/kontakty/start/?sent=1" />
+            <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true" />
             <label for="name">Имя</label>
             <input id="name" name="name" required autocomplete="name" />
 
