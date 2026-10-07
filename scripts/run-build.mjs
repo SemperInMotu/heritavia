@@ -2,7 +2,7 @@ import { spawnSync } from 'node:child_process';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { rmSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
-import { LEGACY_TO_ID, absoluteUrl } from '../lib/page-map.js';
+import { LEGACY_TO_ID, PAGES, absoluteUrl, COM_ORIGIN, COM_EN_REDIRECTS } from '../lib/page-map.js';
 
 const site = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const target = process.argv[2] === 'com' ? 'com' : 'bel';
@@ -23,14 +23,15 @@ function writeComCrossHostRedirects() {
     if (existsSync(p)) rmSync(p, { recursive: true, force: true });
   }
 
-  function stub(target, lang) {
-    const label = lang === 'ru' ? 'Продолжить' : 'Працягнуць';
+  function stub(target, lang, canonical = target) {
+    const label = lang === 'ru' ? 'Продолжить' : lang === 'en' ? 'Continue' : 'Працягнуць';
     return `<!doctype html>
 <html lang="${lang}">
   <head>
     <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
     <meta http-equiv="refresh" content="0;url=${target}" />
-    <link rel="canonical" href="${target}" />
+    <link rel="canonical" href="${canonical}" />
     <title>Redirect…</title>
     <script>location.replace('${target}');</script>
   </head>
@@ -47,13 +48,28 @@ function writeComCrossHostRedirects() {
     writeFileSync(dest, html, 'utf8');
   }
 
-  write('ru/index.html', stub(absoluteUrl('home', 'ru'), 'ru'));
-  write('be/index.html', stub(absoluteUrl('home', 'be'), 'be'));
+  function localeFile(prefix, localePath) {
+    let rest = localePath;
+    if (prefix === 'ru') rest = localePath.replace(/^\/ru\/?/, '');
+    else rest = localePath.replace(/^\//, '');
+    rest = rest.replace(/\/$/, '');
+    if (!rest) return `${prefix}/index.html`;
+    return `${prefix}/${rest}/index.html`;
+  }
+
+  for (const [id, page] of Object.entries(PAGES)) {
+    if (page.ru) write(localeFile('ru', page.ru), stub(absoluteUrl(id, 'ru'), 'ru'));
+    if (page.be) write(localeFile('be', page.be), stub(absoluteUrl(id, 'be'), 'be'));
+  }
   for (const [legacy, id] of Object.entries(LEGACY_TO_ID)) {
     write(`ru/${legacy}`, stub(absoluteUrl(id, 'ru'), 'ru'));
     write(`be/${legacy}`, stub(absoluteUrl(id, 'be'), 'be'));
   }
-  console.log('com out/: /ru/* and /be/* → родословная.бел (no local copies)');
+  for (const { from, to } of COM_EN_REDIRECTS) {
+    const rel = `${from.replace(/^\//, '').replace(/\/$/, '')}/index.html`;
+    write(rel, stub(to, 'en', `${COM_ORIGIN}${to}`));
+  }
+  console.log('com out/: /ru/* and /be/* → родословная.бел; old EN notes → /guides/');
 }
 
 run([resolve(site, 'scripts/gen-sitemap.mjs')]);

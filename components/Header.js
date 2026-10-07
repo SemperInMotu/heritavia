@@ -28,7 +28,7 @@ export function Header({ t, links, startHref, current, home, langs = [], locale 
                   {item.short}
                 </span>
               ) : (
-                <a key={item.code} href={item.href} hrefLang={item.code} title={item.label}>
+                <a key={item.code} href={item.href} hrefLang={item.code} title={item.title || item.label}>
                   {item.short}
                 </a>
               ),

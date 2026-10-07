@@ -9,8 +9,12 @@ Two language front doors, one business. **Next.js static export only** (Vite rem
 | [heritavia.com](https://heritavia.com) | `npm run build:com` (`SITE=com`) | English at `/` | no local RU/BE; legacy `/ru/*` `/be/*` redirect to родословная.бел |
 | [родословная.бел](https://xn--80adf2alcbbnn3n.xn--90ais) | `npm run build` (`SITE=bel`) | Беларуская at `/` | Русский at `/ru/` |
 
-`x-default` and English canonicals → heritavia.com.  
-RU/BE canonicals → родословная.бел. Each page’s `canonical` is self.
+`x-default` is heritavia.com, and only on pages that are real twins (home, about, contact, the enquiry).  
+Guides, the offer, and the cases page are English-only: no `hreflang` to .бел.  
+RU/BE canonicals for pages that exist there → родословная.бел.
+
+Product split for this copy: [`docs/split-strategy-heritavia-com.md`](docs/split-strategy-heritavia-com.md).  
+.com is the EN done-for-you storefront plus `/guides/` (three short pages). It is not an English clone of the .бел knowledge base.
 
 GitHub Pages: repo `SemperInMotu/heritavia` runs `build:com` (EN); repo `SemperInMotu/rodoslovnaya` runs `build` (BE+RU).
 
@@ -41,4 +45,12 @@ Empty hubs (`/services/`, `/dna/`, `/family-tree/`, `/places/`, country research
 
 ## Language switcher
 
-Header (sticky): `EN | RU | BE` — sibling page on the other host/locale via page-map.
+Header (sticky): `EN | RU | BE`.
+
+- Twin pages (home, about, contact, enquiry) cross to the same page on the other host.
+- Every other page sends BE/RU to the .бел front door, and EN to the .com front door.
+- Old `/blog/…` URLs on .com redirect to `/guides/…` on .com. `/ru/…` and `/be/…` on .com redirect to the matching .бел URL.
+
+## Commands for this copy
+
+`npm run dev:com` serves the English storefront. `npm run build:com` writes `out/` (Pages still deploys only `main`).

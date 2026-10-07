@@ -16,14 +16,13 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const page = loadPage('ru', slug);
   if (!page) return {};
+  const languages = Object.fromEntries(page.alternates.map((a) => [a.hreflang, a.href]));
   return {
     title: page.title,
     description: page.description,
     alternates: {
       canonical: page.canonical,
-      languages: Object.fromEntries(
-        page.alternates.filter((a) => a.hreflang !== 'x-default').map((a) => [a.hreflang, a.href]),
-      ),
+      ...(page.alternates.length ? { languages } : {}),
     },
   };
 }
