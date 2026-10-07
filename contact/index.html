@@ -1,53 +1,45 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z12LCY13ES"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-Z12LCY13ES');
-    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Contacts — Heritavia</title>
-    <meta name="description" content="Contact Vitaly Khoruzhko: email, the Heritavia Telegram channel, or a research strategy enquiry. Minsk, Belarus." />
-    <link rel="canonical" href="https://heritavia.com/contact/" />
-    <link rel="alternate" hreflang="en" href="https://heritavia.com/contact/" />
-    <link rel="alternate" hreflang="ru" href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/kontakty/" />
-    <link rel="alternate" hreflang="be" href="https://xn--80adf2alcbbnn3n.xn--90ais/kantakty/" />
-    <link rel="alternate" hreflang="x-default" href="https://heritavia.com/contact/" />
-    <link rel="stylesheet" href="/src/styles/main.css" />
-    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
-    <meta name="robots" content="index,follow" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Contacts — Heritavia" />
-    <meta property="og:description" content="Contact Vitaly Khoruzhko: email, the Heritavia Telegram channel, or a research strategy enquiry. Minsk, Belarus." />
-    <meta property="og:url" content="https://heritavia.com/contact/" />
-    <meta property="og:image" content="https://heritavia.com/assets/og-default.jpg" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Contacts — Heritavia" />
-    <meta name="twitter:description" content="Contact Vitaly Khoruzhko: email, the Heritavia Telegram channel, or a research strategy enquiry. Minsk, Belarus." />
-    <meta name="twitter:image" content="https://heritavia.com/assets/og-default.jpg" />
+    <title>Contact — Heritavia</title>
+    <meta
+      name="description"
+      content="Contact Heritavia in Minsk. The English order form asks whether you need one line or broader research. Belarusian and Russian orders go to родословная.бел."
+    />
   </head>
   <body>
-    <header class="site-header" data-site-header></header>
     <main>
       <section class="page-hero heritage">
         <div class="wrap">
           <div class="eyebrow heritage">Heritavia</div>
-          <h1>Contacts</h1>
-          <p class="lead">Write directly — I reply myself. Minsk, Belarus.</p>
+          <h1>Contact</h1>
+          <p class="lead">
+            Write directly — I reply myself. The practice is in Minsk. The form is the usual way to ask for
+            research.
+          </p>
         </div>
       </section>
 
       <section class="section">
-        <div class="wrap" style="display:grid;gap:1rem;max-width:640px">
+        <div class="wrap" style="display: grid; gap: 1rem; max-width: 640px">
+          <div class="panel featured">
+            <h3>Order form</h3>
+            <p>
+              Say whether you want one line assessed or a wider investigation. Include the place-name as your
+              family says it. There is no payment on this page.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 0.75rem">
+              <a class="btn btn-heritage" href="/contact/start/?scope=broader#enquiry">Start your investigation</a>
+              <a class="btn btn-line" href="/contact/start/?scope=line#enquiry">Request a line assessment</a>
+            </div>
+          </div>
+
           <div class="panel">
             <h3>Email</h3>
             <p><a href="mailto:info@heritavia.com">info@heritavia.com</a></p>
+            <p class="fine">Correspondence can be in English, Russian, or Belarusian. These pages are in English.</p>
           </div>
 
           <div class="panel">
@@ -58,26 +50,27 @@
           <div class="panel">
             <h3>Instagram</h3>
             <p>
-              <a href="https://www.instagram.com/h.e.r.i.t.a.v.i.a/" rel="noopener" target="_blank"
-                >@h.e.r.i.t.a.v.i.a</a
-              >
+              <a href="https://www.instagram.com/h.e.r.i.t.a.v.i.a/" rel="noopener" target="_blank">@h.e.r.i.t.a.v.i.a</a>
             </p>
           </div>
 
-          <div class="panel featured">
-            <h3>Strategy enquiry</h3>
-            <p>Short form — geography of roots, surnames, goal.</p>
-            <div style="margin-top:0.75rem">
-              <a class="btn btn-heritage" href="/contact/start/">Fill in the form</a>
-            </div>
+          <div class="panel">
+            <h3>An order in Belarusian or Russian</h3>
+            <p>
+              If you want to send the enquiry on the Belarusian site, use the order page there. It is the
+              same practice. It is not a translation of this page’s guides.
+            </p>
+            <ul class="list-clean">
+              <li>
+                <a href="https://xn--80adf2alcbbnn3n.xn--90ais/kantakty/start/">Замова па-беларуску — родословная.бел</a>
+              </li>
+              <li>
+                <a href="https://xn--80adf2alcbbnn3n.xn--90ais/ru/kontakty/start/">Заказ по-русски — родословная.бел</a>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
     </main>
-    <footer class="site-footer" data-site-footer></footer>
-    <script type="module">
-      import { mountChrome } from '/src/site.js';
-      mountChrome({ current: 'contacts' });
-    </script>
   </body>
 </html>

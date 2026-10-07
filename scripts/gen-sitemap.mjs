@@ -29,16 +29,22 @@ function wrap(entries) {
   ].join('\n');
 }
 
-const enEntries = Object.keys(PAGES).map((id) =>
-  urlEntry(absoluteUrl(id, 'en'), id, id === 'home' ? '1.0' : '0.7'),
-);
+function priorityFor(id) {
+  if (id === 'home') return '1.0';
+  if (id === 'research' || id === 'guides' || id === 'start') return '0.8';
+  return '0.6';
+}
+
+const enEntries = Object.keys(PAGES)
+  .filter((id) => PAGES[id].en)
+  .map((id) => urlEntry(absoluteUrl(id, 'en'), id, priorityFor(id)));
 writeFileSync(resolve(root, 'public/sitemap.xml'), wrap(enEntries), 'utf8');
 console.log(`public/sitemap.xml — ${enEntries.length} EN urls`);
 
 const belEntries = [];
 for (const id of Object.keys(PAGES)) {
-  belEntries.push(urlEntry(absoluteUrl(id, 'be'), id, id === 'home' ? '1.0' : '0.7'));
-  belEntries.push(urlEntry(absoluteUrl(id, 'ru'), id, id === 'home' ? '1.0' : '0.7'));
+  if (PAGES[id].be) belEntries.push(urlEntry(absoluteUrl(id, 'be'), id, id === 'home' ? '1.0' : '0.7'));
+  if (PAGES[id].ru) belEntries.push(urlEntry(absoluteUrl(id, 'ru'), id, id === 'home' ? '1.0' : '0.7'));
 }
 mkdirSync(resolve(root, 'public'), { recursive: true });
 writeFileSync(resolve(root, 'public/sitemap-bel.xml'), wrap(belEntries), 'utf8');

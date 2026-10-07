@@ -6,7 +6,7 @@
 import { mkdirSync, writeFileSync, rmSync, existsSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { LEGACY_TO_ID, pathFor, absoluteUrl } from '../lib/page-map.js';
+import { LEGACY_TO_ID, PAGES, pathFor, absoluteUrl, COM_ORIGIN } from '../lib/page-map.js';
 import { isCom } from '../lib/site-mode.js';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
@@ -45,9 +45,11 @@ if (isCom) {
   wipe('ru');
   wipe('be');
   for (const [legacy, id] of Object.entries(LEGACY_TO_ID)) {
-    const target = pathFor(id, 'en');
-    write(legacy, stub(target, absoluteUrl(id, 'en'), 'en'));
-    write(`en/${legacy}`, stub(target, absoluteUrl(id, 'en'), 'en'));
+    const page = PAGES[id];
+    const target = page.legacyEn || pathFor(id, 'en');
+    const canonical = page.legacyEn ? `${COM_ORIGIN}${page.legacyEn}` : absoluteUrl(id, 'en');
+    write(legacy, stub(target, canonical, 'en'));
+    write(`en/${legacy}`, stub(target, canonical, 'en'));
   }
   write('en/index.html', stub('/', absoluteUrl('home', 'en'), 'en'));
   console.log('legacy redirects → public/ (EN only / .com; wiped public/ru + public/be)');

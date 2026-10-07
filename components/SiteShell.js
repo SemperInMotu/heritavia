@@ -1,8 +1,9 @@
 import { Header } from './Header';
 import { Maps } from './Maps';
 import { LangSync } from './LangSync';
-import { absoluteUrl, pathFor, NAV_IDS } from '../lib/page-map';
+import { pathFor, navIdsFor, languageSwitchHref, isParallelSwitch } from '../lib/page-map';
 import { UI } from '../lib/i18n';
+import { OrderForm } from './OrderForm';
 
 const LANG_LABELS = {
   en: { short: 'EN', label: 'English' },
@@ -16,23 +17,37 @@ function langOrder(locale) {
   return ['be', 'ru', 'en'];
 }
 
+function enquiryHref(locale, scope) {
+  const base = pathFor('start', locale);
+  if (locale !== 'en') return base;
+  return `${base}?scope=${scope}#enquiry`;
+}
+
+function switchTitle(code, pageId) {
+  if (isParallelSwitch(pageId, code)) return LANG_LABELS[code].label;
+  if (code === 'en') return 'English — heritavia.com';
+  return `${LANG_LABELS[code].label} — родословная.бел`;
+}
+
 function hrefs(locale, pageId) {
   const local = (id) => pathFor(id, locale);
-  const other = (id, lang) => (lang === locale ? local(id) : absoluteUrl(id, lang));
   return {
     home: local('home'),
     research: local('research'),
     report: local('report'),
     about: local('about'),
     blog: local('blog'),
+    guides: local('guides'),
     sitemap: local('sitemap'),
     contacts: local('contacts'),
-    start: local('start'),
+    start: enquiryHref(locale, 'broader'),
+    line: enquiryHref(locale, 'line'),
     langs: langOrder(locale).map((code) => ({
       code,
       short: LANG_LABELS[code].short,
       label: LANG_LABELS[code].label,
-      href: other(pageId || 'home', code),
+      title: code === locale ? LANG_LABELS[code].label : switchTitle(code, pageId || 'home'),
+      href: code === locale ? local(pageId || 'home') : languageSwitchHref(pageId || 'home', code),
     })),
   };
 }
@@ -51,7 +66,8 @@ function instagram(locale) {
 export function SiteShell({ locale, current, pageId = 'home', html }) {
   const t = UI[locale];
   const links = hrefs(locale, pageId);
-  const nav = NAV_IDS.map((key) => ({ key, href: links[key], label: t[key] }));
+  const nav = navIdsFor(locale).map((key) => ({ key, href: links[key], label: t[key] }));
+  const showOrder = locale === 'en' && pageId === 'start';
   const here = (key) => (current === key ? 'page' : undefined);
   return (
     <>
@@ -66,6 +82,7 @@ export function SiteShell({ locale, current, pageId = 'home', html }) {
         locale={locale}
       />
       <main dangerouslySetInnerHTML={{ __html: html }} />
+      {showOrder ? <OrderForm /> : null}
       <footer className="site-footer">
         <div className="wrap">
           <div className="footer-grid">
@@ -118,7 +135,7 @@ export function SiteShell({ locale, current, pageId = 'home', html }) {
                   </a>
                 </li>
                 <li>
-                  <a href={links.start}>{t.formLink}</a>
+                  <a href={locale === 'en' ? links.line : links.start}>{t.formLink}</a>
                 </li>
                 <li>
                   <a href={author(locale)}>{t.author}</a>
