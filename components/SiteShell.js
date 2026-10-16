@@ -1,6 +1,7 @@
 import { Header } from './Header';
 import { Maps } from './Maps';
 import { LangSync } from './LangSync';
+import { GoalPrefill } from './GoalPrefill';
 import { absoluteUrl, pathFor, NAV_IDS } from '../lib/page-map';
 import { UI } from '../lib/i18n';
 
@@ -51,11 +52,13 @@ function instagram(locale) {
 export function SiteShell({ locale, current, pageId = 'home', html }) {
   const t = UI[locale];
   const links = hrefs(locale, pageId);
+  const startCall = locale === 'en' ? `${links.start}?goal=call` : links.start;
   const nav = NAV_IDS.map((key) => ({ key, href: links[key], label: t[key] }));
   const here = (key) => (current === key ? 'page' : undefined);
   return (
     <>
       <LangSync locale={locale} />
+      <GoalPrefill />
       <Header
         t={t}
         links={nav}
@@ -118,7 +121,7 @@ export function SiteShell({ locale, current, pageId = 'home', html }) {
                   </a>
                 </li>
                 <li>
-                  <a href={links.start}>{t.formLink}</a>
+                  <a href={startCall}>{t.formLink}</a>
                 </li>
                 <li>
                   <a href={author(locale)}>{t.author}</a>
