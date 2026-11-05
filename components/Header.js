@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-export function Header({ t, links, startHref, current, home, langs = [], locale }) {
+export function Header({ t, links, startHref, current, home, langs = [], locale, ctaKey = 'start' }) {
   const [open, setOpen] = useState(false);
   return (
     <header className="site-header">
@@ -16,7 +16,7 @@ export function Header({ t, links, startHref, current, home, langs = [], locale 
               {item.label}
             </a>
           ))}
-          <a className="nav-cta" href={startHref} aria-current={current === 'start' ? 'page' : undefined}>
+          <a className="nav-cta" href={startHref} aria-current={current === ctaKey ? 'page' : undefined}>
             {t.start}
           </a>
         </nav>

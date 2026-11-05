@@ -38,6 +38,9 @@ function hrefs(locale, pageId) {
     about: local('about'),
     blog: local('blog'),
     guides: local('guides'),
+    onboard: local('onboard'),
+    sources: local('sources'),
+    method: local('method'),
     sitemap: local('sitemap'),
     contacts: local('contacts'),
     start: enquiryHref(locale, 'broader'),
@@ -75,7 +78,8 @@ export function SiteShell({ locale, current, pageId = 'home', html }) {
       <Header
         t={t}
         links={nav}
-        startHref={links.start}
+        startHref={locale === 'en' ? links.start : links.onboard}
+        ctaKey={locale === 'en' ? 'start' : 'onboard'}
         current={current}
         home={links.home}
         langs={links.langs}
@@ -112,7 +116,7 @@ export function SiteShell({ locale, current, pageId = 'home', html }) {
                   </a>
                 </li>
                 <li>
-                  <a href={links.start} aria-current={here('start')}>
+                  <a href={locale === 'en' ? links.start : links.onboard} aria-current={here(locale === 'en' ? 'start' : 'onboard')}>
                     {t.start}
                   </a>
                 </li>
